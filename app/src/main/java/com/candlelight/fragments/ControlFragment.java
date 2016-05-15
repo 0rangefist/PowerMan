@@ -12,10 +12,11 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import com.candlelight.powerman.Constants;
 import com.candlelight.powerman.R;
-import com.github.nkzawa.emitter.Emitter;
-import com.github.nkzawa.socketio.client.IO;
-import com.github.nkzawa.socketio.client.Socket;
+import io.socket.emitter.Emitter;
+import io.socket.client.IO;
+import io.socket.client.Socket;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +26,7 @@ import java.net.URISyntaxException;
 /**
  * Created by rancard on 8/11/15.
  */
-public class ControlFragment extends Fragment implements MainFragment{
+public class ControlFragment extends Fragment{
     public static Activity mActivity;
     private Socket mSocket;
     private JSONObject led1On = new JSONObject();
@@ -60,7 +61,7 @@ public class ControlFragment extends Fragment implements MainFragment{
 //            led2Off.put("value", 115);
 //            led3Off.put("value", 100);
 //            led4Off.put("value", 102);
-            mSocket = IO.socket("http://192.168.43.98:8080");
+            mSocket = IO.socket(Constants.ServerUrl);
             // mSocket= IO.socket("http://192.168.43.30:3465");
             Log.d("socket.io", "connected successfully");
         } catch (URISyntaxException e) {

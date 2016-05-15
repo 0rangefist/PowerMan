@@ -108,9 +108,9 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     public List<NavigationItem> getMenu() {
         List<NavigationItem> items = new ArrayList<NavigationItem>();
         items.add(new NavigationItem(Constants.Monitor, ContextCompat.getDrawable(getActivity(), R.drawable.ic_monitor)));
-        items.add(new NavigationItem(Constants.Control, ContextCompat.getDrawable(getActivity(), R.drawable.ic_currency)));
-        items.add(new NavigationItem(Constants.Schedule, ContextCompat.getDrawable(getActivity(), R.drawable.ic_rates)));
-        items.add(new NavigationItem(Constants.PowerPlan, ContextCompat.getDrawable(getActivity(), R.drawable.ic_create_account)));
+        items.add(new NavigationItem(Constants.Control, ContextCompat.getDrawable(getActivity(), R.drawable.ic_control)));
+        items.add(new NavigationItem(Constants.Schedule, ContextCompat.getDrawable(getActivity(), R.drawable.ic_schedule)));
+        items.add(new NavigationItem(Constants.PowerPlan, ContextCompat.getDrawable(getActivity(), R.drawable.ic_powerplan)));
         return items;
     }
 

@@ -62,28 +62,28 @@ public class MainActivity extends AppCompatActivity
             // set the toolbar title
             setTitle(Constants.Monitor);
         } else if (position == CONTROL) {
-            ControlFragment f1 = new ControlFragment();
+            ControlFragment f2 = new ControlFragment();
             frgManager = getSupportFragmentManager();
             ft = frgManager.beginTransaction();
-            ft.replace(R.id.container, f1); // f1_container is your FrameLayout container
+            ft.replace(R.id.container, f2); // f1_container is your FrameLayout container
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             ft.commit();
             // set the toolbar title
             setTitle(Constants.Control);
 
         } else if (position == SCHEDULE) {
-            ScheduleFragment f1 = new ScheduleFragment();
+            ScheduleFragment f3 = new ScheduleFragment();
             frgManager = getSupportFragmentManager();
             ft = frgManager.beginTransaction();
-            ft.replace(R.id.container, f1); // f1_container is your FrameLayout container
+            ft.replace(R.id.container, f3); // f1_container is your FrameLayout container
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             ft.commit();
             setTitle(Constants.Schedule);
         } else if (position == POWER_PLAN) {
-            PowerPlanFragment f1 = new PowerPlanFragment();
+            PowerPlanFragment f4 = new PowerPlanFragment();
             frgManager = getSupportFragmentManager();
             ft = frgManager.beginTransaction();
-            ft.replace(R.id.container, f1); // f1_container is your FrameLayout container
+            ft.replace(R.id.container, f4); // f1_container is your FrameLayout container
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             ft.commit();
             setTitle(Constants.PowerPlan);

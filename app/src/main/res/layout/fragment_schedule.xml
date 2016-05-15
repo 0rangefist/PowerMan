@@ -15,14 +15,20 @@
         android:layout_gravity="center_horizontal"
         android:orientation="vertical">
 
-
-        <Spinner
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/textView7"
-            android:layout_alignStart="@+id/textView7" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/textView7"
+                android:layout_alignStart="@+id/textView7"
+                android:layout_gravity="center_horizontal" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"

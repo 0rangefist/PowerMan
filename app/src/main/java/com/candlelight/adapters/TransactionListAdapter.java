@@ -7,15 +7,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.rancard.kudi.domain.Transaction;
 
 import java.util.List;
 
 public class TransactionListAdapter  extends BaseAdapter {
     private LayoutInflater mInflater;
-    private List<Transaction> mTransactions;
+    private List<String> mTransactions;
 
-    public TransactionListAdapter(Context context, List<Transaction> transactions) {
+    public TransactionListAdapter(Context context, List<String> transactions) {
         mInflater = LayoutInflater.from(context);
         mTransactions = transactions;
     }
@@ -53,19 +52,19 @@ public class TransactionListAdapter  extends BaseAdapter {
             holder = (ViewHolder)view.getTag();
         }
 
-        Transaction transaction = mTransactions.get(position);
-        String transId = transaction.getTransactionId().toString();
-        String account = transaction.getAccountNumber().toString();
-        String state = transaction.getState().toString();
-        String event = transaction.getEvent().toString();
-        String amount = transaction.getAmount()+"";
+//        Transaction transaction = mTransactions.get(position);
+//        String transId = transaction.getTransactionId().toString();
+//        String account = transaction.getAccountNumber().toString();
+//        String state = transaction.getState().toString();
+//        String event = transaction.getEvent().toString();
+//        String amount = transaction.getAmount()+"";
 
 
-        holder.transactionTv.setText( transId);
-        holder.accFromTv.setText(account);
-        holder.stateTv.setText(state);
-        holder.eventTv.setText(event);
-        holder.amountTv.setText(amount);
+//        holder.transactionTv.setText( transId);
+//        holder.accFromTv.setText(account);
+//        holder.stateTv.setText(state);
+//        holder.eventTv.setText(event);
+//        holder.amountTv.setText(amount);
 
         return view;
     }

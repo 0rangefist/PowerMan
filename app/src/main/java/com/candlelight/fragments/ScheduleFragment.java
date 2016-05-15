@@ -17,10 +17,11 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import com.candlelight.powerman.Constants;
 import com.candlelight.powerman.R;
-import com.github.nkzawa.emitter.Emitter;
-import com.github.nkzawa.socketio.client.IO;
-import com.github.nkzawa.socketio.client.Socket;
+import io.socket.emitter.Emitter;
+import io.socket.client.IO;
+import io.socket.client.Socket;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +35,7 @@ import java.util.List;
 /**
  * Created by rancard on 8/11/15.
  */
-public class ScheduleFragment extends Fragment implements MainFragment{
+public class ScheduleFragment extends Fragment{
     private static Activity mActivity;
     private TimePicker onTimePicker;
     private TimePicker offTimePicker;
@@ -70,10 +71,9 @@ public class ScheduleFragment extends Fragment implements MainFragment{
     private String satCheckState;
     private String sunCheckState;
 
-
     {
         try {
-            mSocket = IO.socket("http://192.168.43.98:8080");
+            mSocket = IO.socket(Constants.ServerUrl);
             // mSocket= IO.socket("http://192.168.43.30:3465");
             Log.d("socket.io", "connected successfully");
         } catch (URISyntaxException e) {
@@ -194,6 +194,7 @@ public class ScheduleFragment extends Fragment implements MainFragment{
                     satCheckState = "satCheckState4";
                     sunCheckState = "sunCheckState4";
                 }//load picker values from shared preferences else use current hour and min
+
                 calendar = Calendar.getInstance();
                 onTimePicker.setCurrentHour(sharedPref.getInt(onHour, calendar.get(Calendar.HOUR)));
                 onTimePicker.setCurrentMinute(sharedPref.getInt(onMin, calendar.get(Calendar.MINUTE)));

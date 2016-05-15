@@ -8,4 +8,5 @@ public class Constants {
     public static final String Control = "Control";
     public static final String Schedule = "Schedule";
     public static final String PowerPlan = "Power Plan";
+    public static String ServerUrl = "http://192.168.43.98:8080";
 }
